@@ -3,7 +3,7 @@ name: Docker
 on:
   push:
     tags:
-    - 'v*.*.*'
+      - 'v*.*.*'
     paths:
       - docker-bake.hcl
       - Dockerfile
