@@ -14,7 +14,7 @@ on:
 
 
 jobs:
-  Slim:
+  Build_and_Bake:
     runs-on: ubuntu-latest
     steps:
 

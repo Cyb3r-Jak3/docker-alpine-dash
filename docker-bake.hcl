@@ -66,7 +66,7 @@ target "docker-metadata-action" {
         "linux/arm64",
         "linux/386",
     ]
-    cache-to="/tmp/.buildx-cache-new",
+    cache-to="/tmp/.buildx-cache-new"
     cache-from="/tmp/.buildx-cache"
 }
 
