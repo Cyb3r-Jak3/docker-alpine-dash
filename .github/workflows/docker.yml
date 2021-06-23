@@ -4,11 +4,11 @@ on:
   push:
     tags:
       - 'v*.*.*'
-    paths:
-      - docker-bake.hcl
-      - Dockerfile
-      - requirements.txt
-      - .github/workflows/docker.yml
+    # paths:
+    #   - docker-bake.hcl
+    #   - Dockerfile
+    #   - requirements.txt
+    #   - .github/workflows/docker.yml
 
 
 jobs:
