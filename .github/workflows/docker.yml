@@ -1,12 +1,14 @@
 name: Docker
 
 on:
+  tags:
+    - "v*.*.*"
   push:
     paths:
-      - "docker-bake.hcl"
-      - "Dockerfile"
-      - "requirements.txt"
-      - ".github/workflows/docker.yml"
+      - docker-bake.hcl
+      - Dockerfile
+      - requirements.txt
+      - .github/workflows/docker.yml
 
 
 jobs:
