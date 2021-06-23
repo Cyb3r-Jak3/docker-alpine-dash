@@ -18,7 +18,7 @@ group "all" {
 
 target "3.6" {
     dockerfile = "Dockerfile"
-    args = {"PYTHON_MINOR" = "6"}
+    args = {"PYTHON_MINOR_VERSION" = "6"}
     tags = [
         "cyb3rjak3/alpine-dash:3.6",
         "ghcr.io/cyb3r-jak3/alpine-dash:3.6",
@@ -29,7 +29,7 @@ target "3.6" {
 
 target "3.7" {
     dockerfile = "Dockerfile"
-    args = {"PYTHON_MINOR" = "7"}
+    args = {"PYTHON_MINOR_VERSION" = "7"}
     tags = [
         "cyb3rjak3/alpine-dash:3.7",
         "ghcr.io/cyb3r-jak3/alpine-dash:3.7",
@@ -39,7 +39,7 @@ target "3.7" {
 
 target "3.8" {
     dockerfile = "Dockerfile"
-    args = {"PYTHON_MINOR" = "8"}
+    args = {"PYTHON_MINOR_VERSION" = "8"}
     tags = [
         "cyb3rjak3/alpine-dash:3.8",
         "ghcr.io/cyb3r-jak3/alpine-dash:3.8",
@@ -49,7 +49,7 @@ target "3.8" {
 
 target "3.9" {
     dockerfile = "Dockerfile"
-    args = {"PYTHON_MINOR" = "9"}
+    args = {"PYTHON_MINOR_VERSION" = "9"}
     tags = [
         "cyb3rjak3/alpine-dash:3.9",
         "ghcr.io/cyb3r-jak3/alpine-dash:3.9",
@@ -66,8 +66,8 @@ target "docker-metadata-action" {
         "linux/arm64",
         "linux/386",
     ]
-    cache-to="/tmp/.buildx-cache-new"
-    cache-from="/tmp/.buildx-cache"
+    cache-to=["/tmp/.buildx-cache-new"]
+    cache-from=["/tmp/.buildx-cache"]
 }
 
 target "3.6-release" {
