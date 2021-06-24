@@ -14,7 +14,7 @@ on:
 
 
 jobs:
-  Build-${{ matrix.bake-target }}:
+  Bake:
     runs-on: ubuntu-latest
     strategy:
         matrix:
