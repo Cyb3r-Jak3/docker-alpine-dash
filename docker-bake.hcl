@@ -11,49 +11,48 @@ group "release" {
     ]
 }
 
-group "all" {
+group "default" {
     targets = ["3.6","3.7","3.8","3.9"]
 }
 
 
 target "3.6" {
     dockerfile = "Dockerfile"
-    args = {"PYTHON_MINOR" = "6"}
+    args = {"PYTHON_MINOR_VERSION" = "6"}
     tags = [
-        "cyb3rjak3/alpine-dash:3.6",
-        "ghcr.io/cyb3r-jak3/alpine-dash:3.6",
-        "registry.gitlab.com/cyb3r-jak3/alpine:3.6",
+        "cyb3rjak3/alpine-pandas:3.6",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.6",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.6",
     ]
-
 }
 
 target "3.7" {
     dockerfile = "Dockerfile"
-    args = {"PYTHON_MINOR" = "7"}
+    args = {"PYTHON_MINOR_VERSION" = "7"}
     tags = [
-        "cyb3rjak3/alpine-dash:3.7",
-        "ghcr.io/cyb3r-jak3/alpine-dash:3.7",
-        "registry.gitlab.com/cyb3r-jak3/alpine:3.7",
+        "cyb3rjak3/alpine-pandas:3.7",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.7",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.7",
     ]
 }
 
 target "3.8" {
     dockerfile = "Dockerfile"
-    args = {"PYTHON_MINOR" = "8"}
+    args = {"PYTHON_MINOR_VERSION" = "8"}
     tags = [
-        "cyb3rjak3/alpine-dash:3.8",
-        "ghcr.io/cyb3r-jak3/alpine-dash:3.8",
-        "registry.gitlab.com/cyb3r-jak3/alpine:3.8",
+        "cyb3rjak3/alpine-pandas:3.8",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.8",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.8",
     ]
 }
 
 target "3.9" {
     dockerfile = "Dockerfile"
-    args = {"PYTHON_MINOR" = "9"}
+    args = {"PYTHON_MINOR_VERSION" = "9"}
     tags = [
-        "cyb3rjak3/alpine-dash:3.9",
-        "ghcr.io/cyb3r-jak3/alpine-dash:3.9",
-        "registry.gitlab.com/cyb3r-jak3/alpine:3.9",
+        "cyb3rjak3/alpine-pandas:3.9",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.9",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.9",
     ]
 } 
 
@@ -66,8 +65,9 @@ target "docker-metadata-action" {
         "linux/arm64",
         "linux/386",
     ]
-    cache-to="/tmp/.buildx-cache-new",
-    cache-from="/tmp/.buildx-cache"
+
+    cache-to=["type=local,dest=/tmp/.buildx-cache-new"]
+    cache-from=["type=local,src=/tmp/.buildx-cache"]
 }
 
 target "3.6-release" {
