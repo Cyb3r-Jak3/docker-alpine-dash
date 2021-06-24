@@ -67,7 +67,7 @@ target "docker-metadata-action" {
         "linux/386",
     ]
     // cache-to=["/tmp/.buildx-cache-new"]
-    // cache-from=["/tmp/.buildx-cache"]
+    cache-from=["/tmp/.buildx-cache"]
 }
 
 target "3.6-release" {
