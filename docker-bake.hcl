@@ -24,7 +24,6 @@ target "3.6" {
         "ghcr.io/cyb3r-jak3/alpine-dash:3.6",
         "registry.gitlab.com/cyb3r-jak3/alpine:3.6",
     ]
-
 }
 
 target "3.7" {
@@ -67,8 +66,8 @@ target "docker-metadata-action" {
         "linux/386",
     ]
 
-    // cache-to=["/tmp/.buildx-cache-new"]
-    cache-from=["/tmp/.buildx-cache"]
+    // cache-to=["/tmp/buildx-cache-new"]
+    cache-from=["/tmp/buildx-cache"]
 }
 
 target "3.6-release" {
