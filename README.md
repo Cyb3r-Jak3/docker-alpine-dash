@@ -10,7 +10,7 @@ There are tags for python version 3.6, 3.7, 3.8 and 3.9. Images are available on
 
 The table below breaks up the tags by python version and registry.
 
-|     | [Docker Hub](https://hub.docker.com/r/cyb3rjak3/alpine-pandas) | [GitHub](https://github.com/Cyb3r-Jak3/docker-alpine-pandas/pkgs/container/alpine-pandas) | [Gitlab](https://gitlab.com/Cyb3r-Jak3/docker-alpine-pandas/container_registry/1945095) |
+|     | [Docker Hub](https://hub.docker.com/r/cyb3rjak3/alpine-pandas) | [GitHub](https://github.com/Cyb3r-Jak3/docker-alpine-pandas/pkgs/container/alpine-pandas) | [Gitlab](https://gitlab.com/Cyb3r-Jak3/alpine-pandas/container_registry/2068304) |
 |-----|----------------------------------------------------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | 3.6 | cyb3rjak3/alpine-pandas:3.6                                    | ghcr.io/cyb3r-jak3/alpine-pandas:3.6                                                      | registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.6                                        |
 | 3.7 | cyb3rjak3/alpine-pandas:3.7                                    | ghcr.io/cyb3r-jak3/alpine-pandas:3.7                                                      | registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.7                                        |

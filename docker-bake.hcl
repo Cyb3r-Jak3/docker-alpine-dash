@@ -22,7 +22,7 @@ target "3.6" {
     tags = [
         "cyb3rjak3/alpine-pandas:3.6",
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.6",
-        // "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.6",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.6",
     ]
 }
 
@@ -32,7 +32,7 @@ target "3.7" {
     tags = [
         "cyb3rjak3/alpine-pandas:3.7",
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.7",
-        // "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.7",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.7",
     ]
 }
 
@@ -42,7 +42,7 @@ target "3.8" {
     tags = [
         "cyb3rjak3/alpine-pandas:3.8",
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.8",
-        // "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.8",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.8",
     ]
 }
 
@@ -52,7 +52,7 @@ target "3.9" {
     tags = [
         "cyb3rjak3/alpine-pandas:3.9",
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.9",
-        // "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.9",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.9",
     ]
 } 
 
