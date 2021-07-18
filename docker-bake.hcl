@@ -1,7 +1,3 @@
-variable "DOCKER_META_VERSION" {
-    default = "v0.0.0"
-}
-
 group "release" {
     targets = [
         "3.6-release",
@@ -67,21 +63,36 @@ target "docker-metadata-action" {
     ]
 
     cache-to=["type=local,dest=/tmp/.buildx-cache-new"]
-    cache-from=["type=local,src=/tmp/.buildx-cache"]
 }
 
 target "3.6-release" {
     inherits = ["3.6", "docker-metadata-action"]
+    cache-from = [
+        "type=local,src=/tmp/.buildx-cache",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.6"
+    ]
 }
 
 target "3.7-release" {
     inherits = ["3.7", "docker-metadata-action"]
+    cache-from = [
+        "type=local,src=/tmp/.buildx-cache",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.7"
+    ]
 }
 
 target "3.8-release" {
     inherits = ["3.8", "docker-metadata-action"]
+    cache-from = [
+        "type=local,src=/tmp/.buildx-cache",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.8"
+    ]
 }
 
 target "3.9-release" {
     inherits = ["3.9","docker-metadata-action"]
+    cache-from = [
+        "type=local,src=/tmp/.buildx-cache",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.9"
+    ]
 }
