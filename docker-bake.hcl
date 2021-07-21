@@ -56,6 +56,7 @@ target "3.9" {
 target "docker-metadata-action" {
     platforms = [
         "linux/amd64",
+        "linux/arm64",
     ]
 
     cache-to=["type=local,mode=max,dest=/tmp/.buildx-cache-new"]
