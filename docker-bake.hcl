@@ -1,3 +1,6 @@
+variable GITHUB_CACHE {
+    default = "type=local,mode=max,dest=/tmp/.buildx-cache-new"
+}
 group "release" {
     targets = [
         "3.6-release",
@@ -58,16 +61,18 @@ target "docker-metadata-action" {
         "linux/amd64",
         "linux/arm64",
     ]
-
-    cache-to=["type=local,mode=max,dest=/tmp/.buildx-cache-new"]
 }
 
 target "3.6-release" {
     inherits = ["3.6", "docker-metadata-action"]
     cache-from = [
         "type=local,src=/tmp/.buildx-cache",
-        "ghcr.io/cyb3r-jak3/alpine-pandas:3.6"
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.6-cache"
     ]
+    cache-to=[
+        "type=reg,mode=max,ghcr.io/cyb3r-jak3/alpine-pandas:3.6-cache",
+        "${GITHUB_CACHE}"
+        ]
 }
 
 target "3.7-release" {
@@ -76,20 +81,32 @@ target "3.7-release" {
         "type=local,src=/tmp/.buildx-cache",
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.7"
     ]
+    cache-to=[
+        "type=reg,mode=max,ghcr.io/cyb3r-jak3/alpine-pandas:3.7-cache",
+        "${GITHUB_CACHE}"
+        ]
 }
 
 target "3.8-release" {
     inherits = ["3.8", "docker-metadata-action"]
     cache-from = [
         "type=local,src=/tmp/.buildx-cache",
-        "ghcr.io/cyb3r-jak3/alpine-pandas:3.8"
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.8-cache"
     ]
+    cache-to=[
+        "type=reg,mode=max,ghcr.io/cyb3r-jak3/alpine-pandas:3.8-cache",
+        "${GITHUB_CACHE}"
+        ]
 }
 
 target "3.9-release" {
     inherits = ["3.9","docker-metadata-action"]
     cache-from = [
         "type=local,src=/tmp/.buildx-cache",
-        "ghcr.io/cyb3r-jak3/alpine-pandas:3.9"
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.9-cache"
     ]
+    cache-to=[
+        "type=reg,mode=max,ghcr.io/cyb3r-jak3/alpine-pandas:3.9-cache",
+        "${GITHUB_CACHE}"
+        ]
 }
