@@ -1,6 +1,3 @@
-variable GITHUB_CACHE {
-    default = "type=local,mode=max,dest=/tmp/.buildx-cache-new"
-}
 group "release" {
     targets = [
         "3.6-release",
