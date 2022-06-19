@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        bake-target: ["3.6-release", "3.7-release", "3.8-release", "3.9-release"]
+        bake-target: ["3-6-release", "3-7-release", "3-8-release", "3-9-release", "3-10-release"]
 
     steps:
     - name: Checkout
@@ -63,7 +63,7 @@ jobs:
         labels: |
           org.label-schema.vcs-url=https://github.com/Cyb3r-Jak3/docker-alpine-pandas.git
           org.label-schema.schema-version=1.0.0-rc1
-          maintainer=Cyb3r Jak3 jake@jwhite.network
+          maintainer=Cyb3r Jak3 git@cyberjake.xyz
           org.opencontainers.image.vendor=cyb3rjak3
 
     # Handling the version tags in the bake file with an arg

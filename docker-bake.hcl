@@ -1,18 +1,19 @@
 group "release" {
     targets = [
-        "3.6-release",
-        "3.7-release",
-        "3.8-release",
-        "3.9-release",
+        "3-6-release",
+        "3-7-release",
+        "3-8-release",
+        "3-9-release",
+        "3-10-release"
     ]
 }
 
 group "default" {
-    targets = ["3.6","3.7","3.8","3.9"]
+    targets = ["3-6","3-7","3-8","3-9", "3-10"]
 }
 
 
-target "3.6" {
+target "3-6" {
     dockerfile = "Dockerfile"
     args = {"PYTHON_MINOR_VERSION" = "6"}
     tags = [
@@ -22,7 +23,7 @@ target "3.6" {
     ]
 }
 
-target "3.7" {
+target "3-7" {
     dockerfile = "Dockerfile"
     args = {"PYTHON_MINOR_VERSION" = "7"}
     tags = [
@@ -32,7 +33,7 @@ target "3.7" {
     ]
 }
 
-target "3.8" {
+target "3-8" {
     dockerfile = "Dockerfile"
     args = {"PYTHON_MINOR_VERSION" = "8"}
     tags = [
@@ -42,13 +43,23 @@ target "3.8" {
     ]
 }
 
-target "3.9" {
+target "3-9" {
     dockerfile = "Dockerfile"
     args = {"PYTHON_MINOR_VERSION" = "9"}
     tags = [
         "cyb3rjak3/alpine-pandas:3.9",
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.9",
         "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.9",
+    ]
+}
+
+target "3-10" {
+    dockerfile = "Dockerfile"
+    args = {"PYTHON_MINOR_VERSION" = "10"}
+    tags = [
+        "cyb3rjak3/alpine-pandas:3.10",
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.10",
+        "registry.gitlab.com/cyb3r-jak3/alpine-pandas:3.10",
     ]
 } 
 
@@ -63,7 +74,7 @@ target "docker-metadata-action" {
     ]
 }
 
-target "3.6-release" {
+target "3-6-release" {
     inherits = ["3.6", "docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.6-cache",
@@ -71,7 +82,7 @@ target "3.6-release" {
     cache-to=["type=registry,mode=max,ref=ghcr.io/cyb3r-jak3/alpine-pandas:3.6-cache"]
 }
 
-target "3.7-release" {
+target "3-7-release" {
     inherits = ["3.7", "docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.7-cache",
@@ -81,7 +92,7 @@ target "3.7-release" {
         ]
 }
 
-target "3.8-release" {
+target "3-8-release" {
     inherits = ["3.8", "docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.8-cache",
@@ -91,7 +102,7 @@ target "3.8-release" {
         ]
 }
 
-target "3.9-release" {
+target "3-9-release" {
     inherits = ["3.9","docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.9-cache",
@@ -99,4 +110,12 @@ target "3.9-release" {
     cache-to=[
         "type=registry,mode=max,ref=ghcr.io/cyb3r-jak3/alpine-pandas:3.9-cache",
         ]
+}
+
+target "3-10-release" {
+    inherits = ["3.10", "docker-metadata-action"]
+    cache-from = [
+        "ghcr.io/cyb3r-jak3/alpine-pandas:3.10-cache",
+    ]
+    cache-to=["type=registry,mode=max,ref=ghcr.io/cyb3r-jak3/alpine-pandas:3.10-cache"]
 }
