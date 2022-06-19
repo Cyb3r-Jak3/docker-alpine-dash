@@ -75,7 +75,7 @@ target "docker-metadata-action" {
 }
 
 target "3-6-release" {
-    inherits = ["3.6", "docker-metadata-action"]
+    inherits = ["3-6", "docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.6-cache",
     ]
@@ -83,7 +83,7 @@ target "3-6-release" {
 }
 
 target "3-7-release" {
-    inherits = ["3.7", "docker-metadata-action"]
+    inherits = ["3-7", "docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.7-cache",
     ]
@@ -93,7 +93,7 @@ target "3-7-release" {
 }
 
 target "3-8-release" {
-    inherits = ["3.8", "docker-metadata-action"]
+    inherits = ["3-8", "docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.8-cache",
     ]
@@ -103,7 +103,7 @@ target "3-8-release" {
 }
 
 target "3-9-release" {
-    inherits = ["3.9","docker-metadata-action"]
+    inherits = ["3-9","docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.9-cache",
     ]
@@ -113,7 +113,7 @@ target "3-9-release" {
 }
 
 target "3-10-release" {
-    inherits = ["3.10", "docker-metadata-action"]
+    inherits = ["3-10", "docker-metadata-action"]
     cache-from = [
         "ghcr.io/cyb3r-jak3/alpine-pandas:3.10-cache",
     ]
