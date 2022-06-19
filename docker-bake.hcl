@@ -64,12 +64,11 @@ target "3-10" {
 } 
 
 // Special target: https://github.com/docker/metadata-action#bake-definition
-target "docker-metadata-action" {
-    platforms = [
-        "linux/amd64",
-
-    ]
-}
+target "docker-metadata-action" {}
+//     platforms = [
+        // "linux/amd64",
+// 
+    // ]
 //         "linux/386"
 // "linux/arm/v6",
 //         "linux/arm64",
