@@ -67,12 +67,13 @@ target "3-10" {
 target "docker-metadata-action" {
     platforms = [
         "linux/amd64",
-        "linux/arm64",
-        "linux/arm/v7",
+
     ]
 }
 //         "linux/386"
 // "linux/arm/v6",
+//         "linux/arm64",
+// "linux/arm/v7",
 
 target "3-6-release" {
     inherits = ["3-6", "docker-metadata-action"]
