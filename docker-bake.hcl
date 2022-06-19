@@ -70,9 +70,9 @@ target "docker-metadata-action" {
         "linux/arm64",
         "linux/arm/v7",
         "linux/arm/v6",
-        "linux/386"
     ]
 }
+//         "linux/386"
 
 target "3-6-release" {
     inherits = ["3-6", "docker-metadata-action"]
